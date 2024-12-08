@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скрыть элемент</title>
+</head>
+<body>
+    <button id="hideButton">Скрыть элемент</button>
+    <div id="text">Remove me</div>
+
+    <script>
+        const button = document.getElementById('hideButton');
+        const text = document.getElementById('text');
+        button.addEventListener('click', () => {
+            text.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
