@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задачи на JavaScript</title>
+</head>
+<body>
+
+  <script>
+    // Задача 1: Проверка возраста
+    // Напишите функцию, которая возвращает true, если возраст больше 18.
+    function checkAge(age) {
+      return age > 18 ? true : confirm('Родители разрешили?');
+    }
+    console.log(checkAge(20)); 
+    console.log(checkAge(16)); 
+
+    // Задача 2: Функция pow
+    // Напишите функцию, которая возвращает x в степени n.
+    const pow = (x, n) => {
+      let result = 1;
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+      return result;
+    };
+    console.log(pow(3, 2)); 
+    console.log(pow(3, 3)); 
+
+    // Задача 3: Стрелочная функция для ask
+    // Замените код на стрелочную функцию
+    const ask = (question, yes, no) => confirm(question) ? yes() : no();
+    ask(
+      "Вы согласны?",
+      () => alert("Вы согласились."),
+      () => alert("Вы отменили выполнение.")
+    );
+
+    // Задача 4: Сортировка по убыванию
+    let arr = [5, 2, 1, -10, 8];
+    arr.sort((a, b) => b - a); 
+    console.log(arr); 
+
+    // Задача 5: Трансформировать массив объектов в массив имён
+    let users = [{ name: "Вася", age: 25 }, { name: "Петя", age: 30 }, { name: "Маша", age: 28 }];
+    let names = users.map(user => user.name);
+    console.log(names); 
+
+    // Задача 6: Трансформация в объекты
+    let usersMapped = users.map(user => ({ id: user.age, fullName: user.name + " Пупкин" }));
+    console.log(usersMapped); 
+    console.log(usersMapped[0].id); 
+    console.log(usersMapped[0].fullName); 
+
+    // Задача 7: Средний возраст
+    const getAverageAge = (users) => users.reduce((sum, user) => sum + user.age, 0) / users.length;
+    console.log(getAverageAge(users)); 
+  </script>
+
+</body>
+</html>
